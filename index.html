@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>°F - °C -muunnin</title>
+    <style>
+    body {
+    background-color: lightgrey;
+    }
+    #otsikko
+    {
+        top: 2%;
+        left: 25%;
+        color: grey;
+        font-size: 30px;
+    }
+    #tulosc
+    {
+        border: 1px solid grey;
+        border-radius: 3px;
+        width: 15%;
+    }
+    #tulosf
+    {
+        border: 1px solid grey;
+        border-radius: 3px;
+        width: 15%;
+    }
+    </style>
+</head>
+<body>
+<script>
+    function Celsius()
+    {
+        var fahren = document.getElementById("f").value;
+
+        var cels = (parseFloat(fahren - 32)) /1.8;
+        
+        var tulosc = document.getElementById("tulosc").innerHTML = parseFloat( cels.toFixed(2)) + "°Celsius -astetta";
+    }
+</script>
+<script>
+    function Faarao()
+    {
+        var celsiusc = document.getElementById("c").value;
+
+        var fahrenheit = (parseFloat(celsiusc * 1.8)) + 32;
+        
+        var tulosf = document.getElementById("tulosf").innerHTML = parseFloat( fahrenheit.toFixed(2)) + "°Fahrenheit -astetta";
+    }
+</script>
+
+    <p id="otsikko">Lämpötilamuunnin <br> 
+    °Fahrenheiteista - °Celsius-asteiksi
+    <br> ...ja toisinpäin</p>
+    
+<div class= "container">
+        <div class="fc">
+    Syötä muunnettava lämpötila Fahrenheiteina: 
+    <br> 
+    <input type="number" id="f">
+    <p id="tulosc"></p>
+    <button id="muunnac" onclick="Celsius()">Muunna</button>
+    </div>
+    <br><br><br> 
+    
+    <div class="cf">
+    Syötä muunnettava lämpötila Celsius-asteina: 
+    <br>
+    <input type="number" id="c">
+    <p id="tulosf"></p>
+    <button id="muunnaf" onclick="Faarao()">Muunna</button>
+    </div>
+</div>
+</body>
+
+</html>
